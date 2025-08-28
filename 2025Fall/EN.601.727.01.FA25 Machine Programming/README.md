@@ -1,4 +1,4 @@
-Crouse Info：https://machine-programming.github.io/index.html#calendar
+Crouse Info：https://machine-programming.github.io/index.html
 
 (10%) Class participation and active discussion
 
