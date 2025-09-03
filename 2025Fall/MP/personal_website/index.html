@@ -1,0 +1,517 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zhiming Chang - Personal Profile</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Configure Tailwind with JHU colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#003B6F', // JHU dark blue
+                        secondary: '#007C9B', // JHU accent blue
+                        light: '#F0F7FF', // Light blue background
+                        jhuGold: '#FFB81C' // JHU gold accent
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Custom utilities -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .transition-custom {
+                transition: all 0.3s ease;
+            }
+            .pulse-animation {
+                animation: pulse 2s infinite;
+            }
+            .timeline-item {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: all 0.6s ease-out;
+            }
+            .timeline-item.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            @keyframes pulse {
+                0% {
+                    box-shadow: 0 0 0 0 rgba(0, 59, 111, 0.4);
+                }
+                70% {
+                    box-shadow: 0 0 0 10px rgba(0, 59, 111, 0);
+                }
+                100% {
+                    box-shadow: 0 0 0 0 rgba(0, 59, 111, 0);
+                }
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+    <!-- Navigation -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-sm shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary flex items-center">
+                <i class="fa fa-user-circle mr-2"></i>
+                <span>Zhiming Chang</span>
+            </a>
+            
+            <!-- Desktop navigation -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="font-medium hover:text-primary transition-custom">About</a>
+                <a href="#updates" class="font-medium hover:text-primary transition-custom">Updates</a>
+                <a href="#experience" class="font-medium hover:text-primary transition-custom">Experience</a>
+                <a href="#skills" class="font-medium hover:text-primary transition-custom">Skills</a>
+                <a href="#contact" class="font-medium hover:text-primary transition-custom">Contact</a>
+            </nav>
+            
+            <!-- Mobile menu button -->
+            <button id="menuBtn" class="md:hidden text-gray-700 focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile navigation menu -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white shadow-md absolute w-full">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#about" class="py-2 font-medium hover:text-primary transition-custom">About</a>
+                <a href="#updates" class="py-2 font-medium hover:text-primary transition-custom">Updates</a>
+                <a href="#experience" class="py-2 font-medium hover:text-primary transition-custom">Experience</a>
+                <a href="#skills" class="py-2 font-medium hover:text-primary transition-custom">Skills</a>
+                <a href="#contact" class="py-2 font-medium hover:text-primary transition-custom">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="about" class="pt-28 pb-20 md:pt-36 md:pb-28 bg-gradient-to-br from-light to-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-primary/10 rounded-full blur-xl"></div>
+                        <!-- Profile avatar -->
+                        <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/a3eb7c1e41214a79bea4b1a0a3f21f17~tplv-a9rns2rl98-image.image?rcl=20250828120934A70B1329F294722AFF42&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1756958975&amp;x-signature=VZqvd%2FLZ3QLgl9qxIYOIko3Gl8A%3D" alt="Zhiming Chang" class="relative w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-4 border-white shadow-lg mx-auto">
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-gray-800 mb-4 text-shadow">
+                        Hello, I'm <span class="text-primary">Zhiming Chang</span>
+                    </h1>
+                    <h2 class="text-[clamp(1.2rem,3vw,1.8rem)] text-gray-600 mb-6">JHU AMS Graduate Student</h2>
+                    <p class="text-gray-700 text-lg mb-8 leading-relaxed">
+                        I'm currently pursuing graduate studies at Johns Hopkins University, focusing on optimization and machine learning courses. My research interest lies in machine learning model optimization.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-medium shadow-lg hover:shadow-xl transition-custom flex items-center">
+                            <i class="fa fa-envelope mr-2"></i> Contact Me
+                        </a>
+                        <a href="#skills" class="bg-white hover:bg-gray-100 text-primary border border-primary px-6 py-3 rounded-lg font-medium shadow hover:shadow-md transition-custom flex items-center">
+                            <i class="fa fa-code mr-2"></i> View Skills
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Updates Section -->
+    <section id="updates" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold text-gray-800 mb-4">Latest Updates</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Real-time updates on my academic journey and activities
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto bg-light rounded-2xl shadow-md overflow-hidden border border-blue-100">
+                <div class="p-6 md:p-8">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 mt-1">
+                            <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center pulse-animation">
+                                <i class="fa fa-graduation-cap"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex items-center mb-2">
+                                <h3 class="font-bold text-lg text-gray-800">Joined Johns Hopkins University</h3>
+                                <span class="ml-3 bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Recent</span>
+                            </div>
+                            <p class="text-gray-600 mb-3">
+                                Started my graduate studies in the Applied Mathematics &amp; Statistics program at JHU. Excited to explore advanced topics in data science and statistical modeling.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-calendar-o mr-2"></i>
+                                <span>Fall 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr class="my-6 border-blue-100">
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 mt-1">
+                            <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center">
+                                <i class="fa fa-graduation-cap"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex items-center mb-2">
+                                <h3 class="font-bold text-lg text-gray-800">Graduated from Shandong University</h3>
+                            </div>
+                            <p class="text-gray-600 mb-3">
+                                Successfully completed undergraduate studies and obtained a Bachelor of Science degree in the Data Science and Artificial Intelligence Honors Program.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-calendar-o mr-2"></i>
+                                <span>Summer 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr class="my-6 border-blue-100">
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 mt-1">
+                            <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center">
+                                <i class="fa fa-trophy"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex items-center mb-2">
+                                <h3 class="font-bold text-lg text-gray-800">Won National First Prize</h3>
+                            </div>
+                            <p class="text-gray-600 mb-3">
+                                Awarded First Prize in the 16th National University Student Energy-Saving and Emission Reduction Social Practice and Technology Competition.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-calendar-o mr-2"></i>
+                                <span>2023</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr class="my-6 border-blue-100">
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 mt-1">
+                            <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center">
+                                <i class="fa fa-graduation-cap"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex items-center mb-2">
+                                <h3 class="font-bold text-lg text-gray-800">Joined Shandong University</h3>
+                            </div>
+                            <p class="text-gray-600 mb-3">
+                                Began undergraduate studies in the Data Science and Artificial Intelligence Honors Program at Shandong University.
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-calendar-o mr-2"></i>
+                                <span>Fall 2021</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-gray-800 mb-4">My Experience</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+                    My educational background has shaped my professional knowledge and academic abilities
+                </p>
+            </div>
+            
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Timeline axis - 美化的时间线，穿过圆形中心 -->
+                <div class="absolute left-0 md:left-1/2 h-full w-1 bg-gradient-to-b from-primary via-primary/70 to-primary/40 transform md:translate-x-[-0.5rem]"></div>
+                
+                <!-- Experience item 1: MS Degree -->
+                <div class="relative mb-16 timeline-item" data-delay="0">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-12 md:text-right mb-8 md:mb-0 md:order-1 order-2">
+                            <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-primary hover:shadow-xl transition-custom">
+                                <h3 class="text-xl font-bold mb-1">M.S. in Applied Mathematics &amp; Statistics</h3>
+                                <p class="text-primary font-medium mb-2">Johns Hopkins University | 2025 - Present</p>
+                                <p class="text-gray-600">Pursuing graduate studies in AMS with focus on optimization and machine learning.</p>
+                            </div>
+                        </div>
+                        <!-- 美化的圆形标记 -->
+                        <div class="absolute left-0 md:left-1/2 w-8 h-8 rounded-full bg-primary border-4 border-white shadow-lg transform -translate-x-1/2 md:translate-x-[-0.5rem] z-10 hover:scale-110 transition-custom flex items-center justify-center">
+                            <div class="w-3 h-3 rounded-full bg-white"></div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 md:order-2 order-1"></div>
+                    </div>
+                </div>
+                
+                <!-- Experience item 2: BS Degree -->
+                <div class="relative timeline-item" data-delay="200">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-12 md:order-1 order-1"></div>
+                        <!-- 美化的圆形标记 -->
+                        <div class="absolute left-0 md:left-1/2 w-8 h-8 rounded-full bg-primary border-4 border-white shadow-lg transform -translate-x-1/2 md:translate-x-[-0.5rem] z-10 hover:scale-110 transition-custom flex items-center justify-center">
+                            <div class="w-3 h-3 rounded-full bg-white"></div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 mb-8 md:mb-0 md:order-2 order-2">
+                            <div class="bg-white p-6 rounded-xl shadow-lg border-r-4 border-primary hover:shadow-xl transition-custom">
+                                <h3 class="text-xl font-bold mb-1">B.S. in Statistics</h3>
+                                <p class="text-primary font-medium mb-2">Shandong University | 2021 - 2024</p>
+                                <p class="text-gray-600">Studied in the Statistics (Data Science and Artificial Intelligence Honors Program).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-gray-800 mb-4">My Skills</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+                    Professional skills developed through academic and practical experience
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Skill Card 1: Programming Languages -->
+                <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-xl transition-custom border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-5">
+                        <i class="fa fa-code text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Programming Languages</h3>
+                    <p class="text-gray-600 mb-4">Proficient in Python and R language, capable of efficient data processing and analysis.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-100 text-primary text-xs px-3 py-1 rounded-full">Python</span>
+                        <span class="bg-blue-100 text-primary text-xs px-3 py-1 rounded-full">R</span>
+                        <span class="bg-blue-100 text-primary text-xs px-3 py-1 rounded-full">Data Processing</span>
+                        <span class="bg-blue-100 text-primary text-xs px-3 py-1 rounded-full">Data Analysis</span>
+                    </div>
+                </div>
+                
+                <!-- Skill Card 2: Operating Systems -->
+                <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-xl transition-custom border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-5">
+                        <i class="fa fa-server text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Operating Systems</h3>
+                    <p class="text-gray-600 mb-4">Familiar with Linux system operation, able to use Linux system for server construction, operation and maintenance.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-100 text-primary text-xs px-3 py-1 rounded-full">Linux</span>
+                        <span class="bg-blue-100 text-primary text-xs px-3 py-1 rounded-full">Server Setup</span>
+                        <span class="bg-blue-100 text-primary text-xs px-3 py-1 rounded-full">System Administration</span>
+                        <span class="bg-blue-100 text-primary text-xs px-3 py-1 rounded-full">Maintenance</span>
+                    </div>
+                </div>
+                
+                <!-- Skill Card 3: Machine Learning & Deep Learning -->
+                <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-xl transition-custom border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-5">
+                        <i class="fa fa-cogs text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Machine Learning &amp; Deep Learning</h3>
+                    <p class="text-gray-600 mb-4">Have a solid theoretical foundation for machine learning and deep learning, and be able to apply relevant algorithms to solve practical problems.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-100 text-primary text-xs px-3 py-1 rounded-full">ML Algorithms</span>
+                        <span class="bg-blue-100 text-primary text-xs px-3 py-1 rounded-full">Deep Learning</span>
+                        <span class="bg-blue-100 text-primary text-xs px-3 py-1 rounded-full">Theoretical Foundation</span>
+                        <span class="bg-blue-100 text-primary text-xs px-3 py-1 rounded-full">Practical Application</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-gray-800 mb-4">Contact Me</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+                    Have questions or collaboration ideas? Feel free to get in touch
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-1 gap-8 mb-12">
+                    <!-- Contact Information -->
+                    <div class="bg-gray-50 rounded-xl p-8 shadow-md">
+                        <h3 class="text-xl font-bold mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                    <i class="fa fa-envelope text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">Email</h4>
+                                    <p class="text-gray-600">zchang9@jh.edu</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                    <i class="fa fa-github text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">GitHub</h4>
+                                    <p class="text-gray-600">github.com/Le0Chang</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                    <i class="fa fa-university text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">University</h4>
+                                    <p class="text-gray-600">Johns Hopkins University</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                    <i class="fa fa-map-marker text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">Location</h4>
+                                    <p class="text-gray-600">Baltimore, Maryland</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold flex items-center">
+                        <i class="fa fa-user-circle mr-2"></i>
+                        <span>Zhiming Chang</span>
+                    </a>
+                    <p class="text-blue-100 mt-2">JHU AMS Graduate Student | Machine Learning Researcher</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#about" class="text-blue-100 hover:text-white transition-custom">About</a>
+                    <a href="#updates" class="text-blue-100 hover:text-white transition-custom">Updates</a>
+                    <a href="#experience" class="text-blue-100 hover:text-white transition-custom">Experience</a>
+                    <a href="#skills" class="text-blue-100 hover:text-white transition-custom">Skills</a>
+                    <a href="#contact" class="text-blue-100 hover:text-white transition-custom">Contact</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-700 mt-8 pt-8 text-center text-blue-100">
+                <p>© 2025 Zhiming Chang. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2', 'shadow');
+                navbar.classList.remove('py-4');
+            } else {
+                navbar.classList.add('py-4');
+                navbar.classList.remove('py-2', 'shadow');
+            }
+        });
+        
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+            // Toggle icon
+            const icon = menuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    const icon = menuBtn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Timeline animation on scroll
+        function checkTimelineVisibility() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            timelineItems.forEach((item, index) => {
+                const itemTop = item.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (itemTop < windowHeight * 0.85) {
+                    // Add delay for sequential animation
+                    setTimeout(() => {
+                        item.classList.add('visible');
+                    }, parseInt(item.dataset.delay) || 0);
+                }
+            });
+        }
+        
+        // Initial check and add scroll event listener
+        window.addEventListener('load', checkTimelineVisibility);
+        window.addEventListener('scroll', checkTimelineVisibility);
+    </script>
+
+
+    </body></html>
